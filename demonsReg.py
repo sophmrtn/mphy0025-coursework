@@ -247,7 +247,7 @@ def demonsReg(source, target, sigma_elastic=1, sigma_fluid=1, num_lev=3, use_com
       warped_image = resampImageWithDefField(source, def_field)
 
       # update images if required for this iteration
-      if it % disp_freq == 0:
+      if disp_freq > 0 and it % disp_freq == 0:
         plt.figure(3)
         dispImage(warped_image)
         plt.pause(0.05)
